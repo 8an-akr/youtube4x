@@ -1,0 +1,34 @@
+{
+    "manifest_version": 3,
+    "name": "YouTube 4X",
+    "version": "1.0.0",
+    "description": "YouTube 4X speed",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "speed4x.html",
+        "default_icon": {
+            "16": "/images/get_started16.png",
+            "32": "/images/get_started32.png",
+            "48": "/images/get_started48.png",
+            "128": "/images/get_started128.png"
+        }
+    },
+    "icons": {
+        "16": "/images/get_started16.png",
+        "32": "/images/get_started32.png",
+        "48": "/images/get_started48.png",
+        "128": "/images/get_started128.png"
+    },
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["speed4x.js"],
+        "css": ["speed4x.css"]
+    }],
+    "permissions": ["storage", "activeTab", "scripting", "tabs"],
+    "host_permissions": [
+        "https://www.youtube.com/*"
+    ]
+
+}
